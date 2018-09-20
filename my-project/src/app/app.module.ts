@@ -8,7 +8,9 @@ import {FormsModule} from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
-
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,11 @@ import { AppRoutingModule } from './/app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService,{dataEncapsulation:false}
+      )
   ],
   providers: [],
   bootstrap: [AppComponent]

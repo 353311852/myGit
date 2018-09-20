@@ -10,6 +10,7 @@
 			<th>英雄姓名</th>
 			<th>英雄属性</th>
 			<th>英雄详情</th>
+			<th>删除</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -17,7 +18,21 @@
 			<td>{{heroe.id}}</td>
 			<td>{{heroe.name}}</td>
 			<td>{{heroe.property}}</td>
-			<td><button class="btn btn-primary">详情</button></td>
+			<td><button class="btn btn-primary" routerLink="/detail/{{heroe.id}}">详情</button></td>
+			<td><button class="btn btn-danger" (click)="delete(heroe)">删除</button></td>
 		</tr>
 	</tbody>
 </table>
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <label>属性:
+   <input #property />
+  </label>
+  
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="btn btn-default" (click)="add(heroName.value,property.value); heroName.value=''">
+    add
+  </button>
+</div>
