@@ -1,0 +1,23 @@
+<fieldset>
+
+    <legend class="text-center">英雄列表</legend>
+
+</fieldset>
+<table class="table table-border table-hover">
+	<thead>
+		<tr>
+			<th>英雄编号</th>
+			<th>英雄姓名</th>
+			<th>英雄属性</th>
+			<th>英雄详情</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let heroe of heroes">
+			<td>{{heroe.id}}</td>
+			<td>{{heroe.name}}</td>
+			<td>{{heroe.property}}</td>
+			<td><button class="btn btn-primary">详情</button></td>
+		</tr>
+	</tbody>
+</table>

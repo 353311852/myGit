@@ -1,0 +1,13 @@
+<form *ngIf="hero">
+   <div class="form-group">
+    <label>id</label>
+    <input type="text" class="form-control" [ngModel]="hero.id" disabled="true">
+  </div>
+
+  <div class="form-group">
+    <label>姓名</label>
+    <input type="text" class="form-control" [ngModel]="hero.name">
+  </div>
+ 
+  <button type="button" class="btn btn-primary">Submit</button>
+</form>
