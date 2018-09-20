@@ -19,6 +19,7 @@ export class HeroesComponent implements OnInit {
   getHeroeList():void{
       this.heroService.getHeroes().subscribe(heroes=>this.heroes = heroes);
   }
+  //测试下git
   //生命周期钩子,初始化逻辑
   ngOnInit() {
     this.getHeroeList();
